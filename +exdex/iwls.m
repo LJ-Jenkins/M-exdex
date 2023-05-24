@@ -87,6 +87,7 @@ function res = iwls(data, u, maxit)
     n_wls = temp.n_wls;
     theta = temp.theta;
     res = table(theta, conv, niter, n_gaps)
+    disp(res)
 end
 
 % fini
