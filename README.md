@@ -1,5 +1,5 @@
 # M-exdex
- Matlab/Octave translation of the exdex R package:
+ Matlab/Octave distribution of the exdex R package:
  
  
  https://github.com/paulnorthrop/exdex/tree/master
