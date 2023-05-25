@@ -1,4 +1,4 @@
-function res = iwls(data, u, maxit)
+function res = iwls(data, u, maxit, nv)
     %' Iterated weighted least squares estimation of the extremal index
     %'
     %' Estimates the extremal index \eqn{\theta} using the iterated weighted least
@@ -45,6 +45,7 @@ function res = iwls(data, u, maxit)
         data (:,:) double
         u (1,1) double {mustBeNumeric}
         maxit (1,1) double {mustBePositive,mustBeNumeric} = 100
+        nv.disp char {mustBeMember(nv.disp,{'y','n'})} = 'y'
     end
 
     if u >= max(data, [], 'omitnan')
@@ -87,7 +88,9 @@ function res = iwls(data, u, maxit)
     n_wls = temp.n_wls;
     theta = temp.theta;
     res = table(theta, conv, niter, n_gaps)
-    disp(res)
+    if strcmpi(nv.disp, 'y')
+        disp(res)
+    end
 end
 
 % fini

@@ -1,4 +1,4 @@
-function res = kgaps(data, u, k, inc_cens)
+function res = kgaps(data, u, k, inc_cens, nv)
     %' Maximum likelihood estimation for the \eqn{K}-gaps model
     %'
     %' Calculates maximum likelihood estimates of the extremal index \eqn{\theta}
@@ -10,6 +10,7 @@ function res = kgaps(data, u, k, inc_cens)
         u (1,1) double {mustBeNumeric}
         k (1,1) double {mustBePositive,mustBeNumeric} = 1
         inc_cens (1,1) logical = true
+        nv.disp char {mustBeMember(nv.disp,{'y','n'})} = 'y'
     end
 
     if u >= max(data, [], 'omitnan')
@@ -68,7 +69,9 @@ function res = kgaps(data, u, k, inc_cens)
     end
     max_loglik = exdex.kgaps.loglik(theta_mle, N0, N1, ss.sum_qs, ss.n_kgaps);
     res = table(theta_mle, theta_se, se_exp, N0, N1, ss.sum_qs, ss.n_kgaps, k, u, inc_cens, max_loglik);
-    disp(res)
+    if strcmpi(nv.disp, 'y')
+        disp(res)
+    end
 end
 
 % fini

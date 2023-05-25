@@ -1,4 +1,4 @@
-function res = dgaps(data, u, D, inc_cens)
+function res = dgaps(data, u, D, inc_cens, nv)
     %' Maximum likelihood estimation using left-censored inter-exceedances times
     %'
     %' Calculates maximum likelihood estimates of the extremal index \eqn{\theta}
@@ -12,6 +12,7 @@ function res = dgaps(data, u, D, inc_cens)
         u (1,1) double {mustBeNumeric}
         D (1,1) double {mustBePositive,mustBeNumeric} = 1
         inc_cens (1,1) logical = true
+        nv.disp char {mustBeMember(nv.disp,{'y','n'})} = 'y'
     end
 
     if u >= max(data, [], 'omitnan')
@@ -85,7 +86,9 @@ function res = dgaps(data, u, D, inc_cens)
     max_loglik = exdex.dgaps.loglik(theta_mle, N0, N1, ss.sum_qtd, ss.n_dgaps, ss.q_u, D);
     res = table(theta_mle, theta_se, se_exp, N0, N1, ss.sum_qtd, ss.n_dgaps, ss.q_u, D, u, ...
         inc_cens, max_loglik);
-    disp(res)
+        if strcmpi(nv.disp, 'y')
+            disp(res)
+        end
 end
 
 % fini
