@@ -1,5 +1,5 @@
 # M-exdex
- Matlab/Octave distribution of the exdex R package:
+ Matlab/Octave distribution of the exdex R package (Estimation of the Extremal Index):
  
  
  https://github.com/paulnorthrop/exdex/tree/master
