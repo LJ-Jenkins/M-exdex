@@ -7,4 +7,10 @@
  https://paulnorthrop.github.io/exdex/
  
  
- All credit and thanks to Paul Northrop - the author of exdex.
+ All code has only been minimally tested - use with caution -
+ 
+ 
+ At present, only the functions extremal index calculation functions have been completed, in the future I will look to translating the rest of the package.
+ 
+ 
+
