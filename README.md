@@ -10,7 +10,7 @@
  All code has only been minimally tested - use with caution -
  
  
-At present, only the functions extremal index calculation functions have been completed, in the future I will look to translating the rest of the package. For full details about the theory, functions, and inputs, please refer to the original package.
+At present, only the functions for the extremal index calculation have been completed, in the future I will look to translating the rest of the package, such as the diagnostic plots. For full details about the theory, functions, and inputs, please refer to the original package.
  
  
 Syntax is exdex.function(), currently working functions:
