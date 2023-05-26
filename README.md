@@ -13,7 +13,7 @@
 At present, only the functions for the extremal index calculation have been completed, in the future I will look to translating the rest of the package, such as the diagnostic plots. For full details about the theory, functions, and inputs, please refer to the original package.
  
  
-Syntax is exdex.function(), currently working functions:
+Syntax is exdex.function(), the currently working functions are:
 
 ```matlab:Code
 theta = exdex.spm(data, b, bias_adjust, constrain, varN, which_dj, nv);
