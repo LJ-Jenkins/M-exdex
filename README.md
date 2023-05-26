@@ -23,3 +23,5 @@ theta = exdex.iwls(data, u, maxit, nv);
 % 'nv' is name value argument 'disp' to specify whether to display output to command window or not.
 % default is to display, specify 'disp', 'n' to not display.
 ```
+
+All credit and thanks to authors of the original R package.
