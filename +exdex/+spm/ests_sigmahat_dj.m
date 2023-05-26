@@ -2,6 +2,14 @@ function res = ests_sigmahat_dj(all_max, b, which_dj, bias_adjust)
     % Which of the raw values in x are <= each of the values in y?
     % For each of the block maxima in y calculate the numbers of the raw
     % values in each block that are <= the block maximum
+
+    arguments
+        all_max
+        b (1,1) double {mustBePositive,mustBeNumeric}
+        which_dj char {mustBeMember(which_dj,{'all','first','last'})}
+        bias_adjust char {mustBeMember(bias_adjust,{'BB3', 'BB1', 'N', 'none'})}= 'N'
+    end
+
     % k_n is the number of blocks
     k_n = size(all_max.yd, 1);
     % m is the number of raw observations
