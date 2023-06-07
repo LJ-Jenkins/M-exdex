@@ -68,7 +68,9 @@ function res = kgaps(data, u, k, inc_cens, nv)
         theta_se = 0;
     end
     max_loglik = exdex.kgaps.loglik(theta_mle, N0, N1, ss.sum_qs, ss.n_kgaps);
-    res = table(theta_mle, theta_se, se_exp, N0, N1, ss.sum_qs, ss.n_kgaps, k, u, inc_cens, max_loglik);
+    sum_qs = ss.sum_qs;
+    n_kgaps = ss.n_kgaps;
+    res = table(theta_mle, theta_se, se_exp, N0, N1, sum_qs, n_kgaps, k, u, inc_cens, max_loglik);
     if strcmpi(nv.disp, 'y')
         disp(res)
     end

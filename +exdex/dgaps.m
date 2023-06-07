@@ -84,7 +84,10 @@ function res = dgaps(data, u, D, inc_cens, nv)
         se_exp = 1 / sqrt(exp_info);
     end
     max_loglik = exdex.dgaps.loglik(theta_mle, N0, N1, ss.sum_qtd, ss.n_dgaps, ss.q_u, D);
-    res = table(theta_mle, theta_se, se_exp, N0, N1, ss.sum_qtd, ss.n_dgaps, ss.q_u, D, u, ...
+    sum_qtd = ss.sum_qtd;
+    n_dgaps = ss.n_dgaps;
+    q_u = ss.q_u;
+    res = table(theta_mle, theta_se, se_exp, N0, N1, sum_qtd, n_dgaps, q_u, D, u, ...
         inc_cens, max_loglik);
         if strcmpi(nv.disp, 'y')
             disp(res)
