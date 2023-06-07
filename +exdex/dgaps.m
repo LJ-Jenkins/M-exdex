@@ -89,9 +89,9 @@ function res = dgaps(data, u, D, inc_cens, nv)
     q_u = ss.q_u;
     res = table(theta_mle, theta_se, se_exp, N0, N1, sum_qtd, n_dgaps, q_u, D, u, ...
         inc_cens, max_loglik);
-        if strcmpi(nv.disp, 'y')
-            disp(res)
-        end
+    if strcmpi(nv.disp, 'y')
+        disp(res)
+    end
 end
 
 % fini
