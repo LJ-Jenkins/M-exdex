@@ -19,7 +19,7 @@ function res = kgaps(data, u, k, inc_cens, nv)
     % If there are missing values then use split_by_NAs to extract sequences
     % of non-missing values
     if any(isnan(data))
-        data = int.split_by_nans(data);
+        data = exdex.int.split_by_nans(data);
     end
     % Estimate the marginal exceedance probability q_u
     q_u = mean(data > u, 'all', 'omitnan');
