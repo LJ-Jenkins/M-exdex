@@ -87,7 +87,7 @@ function res = iwls(data, u, maxit, nv)
     conv(diff_n_wls > 0) = 1;
     n_wls = temp.n_wls;
     theta = temp.theta;
-    res = table(theta, conv, niter, n_gaps)
+    res = table(theta, conv, niter, n_gaps);
     if strcmpi(nv.disp, 'y')
         disp(res)
     end
