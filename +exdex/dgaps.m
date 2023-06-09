@@ -24,7 +24,7 @@ function res = dgaps(data, u, D, inc_cens, nv)
         data = exdex.int.split_by_nans(data);
     end
     % Estimate the marginal exceedance probability q_u
-    q_u = mean(data > u, 'all', 'omitnan');
+    q_u = mean(data(~isnan(data)) > u);
     % Calculate sufficient statistics for each column in data and then sum
     stats_list = arrayfun(@(i) exdex.dgaps.stats(data(:,i), u, q_u, D, inc_cens), ...
         1:size(data,2), 'un', 0);
