@@ -67,7 +67,7 @@ function res = dgaps(data, u, D, inc_cens, nv)
         if N1 > 0 || D == 0
             obs_info = obs_info - N0 * exdex.int.gdd_theta(theta_mle, q_u, D);
         else 
-            obs_info = NA;
+            obs_info = nan;
         end
     end
     if N1 > 0
@@ -77,8 +77,8 @@ function res = dgaps(data, u, D, inc_cens, nv)
     % If it is not positive then return NA for the estimated SE
     % Similarly for the expected information
     if ~isnan(obs_info) && obs_info <= 0
-        theta_se = NA;
-        se_exp = NA;
+        theta_se = nan;
+        se_exp = nan;
     else
         theta_se = sqrt(1 / obs_info);
         se_exp = 1 / sqrt(exp_info);
